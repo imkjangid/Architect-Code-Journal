@@ -1,4 +1,5 @@
-🏛️ Architect's Code Journal
+![Architect Code Journal banner](assets/acj-banner.svg)
+
 
 Welcome! I am a Technical Architect & Mentor. This repository serves as a curated collection of my journey through software architecture, system design, and advanced coding patterns.
 My goal is to bridge the gap between complex theoretical concepts and practical, scalable implementations. Here, I break down high-level architectural decisions into simple, maintainable code snippets that I share with my community on Social media.

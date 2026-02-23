@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="Architect Code Journal banner">
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071724"/>
+      <stop offset="55%" stop-color="#06101B"/>
+      <stop offset="100%" stop-color="#080A12"/>
+    </linearGradient>
+
+    <radialGradient id="spot" cx="18%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#0B2E3A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle dot grid -->
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#9FE7FF" opacity="0.10"/>
+    </pattern>
+
+    <!-- Thin grid lines -->
+    <pattern id="grid" width="66" height="66" patternUnits="userSpaceOnUse">
+      <path d="M66 0H0V66" fill="none" stroke="#9FE7FF" stroke-opacity="0.06" stroke-width="1"/>
+      <path d="M33 0V66M0 33H66" fill="none" stroke="#9FE7FF" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+
+    <!-- Glow -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="1 0 0 0 0                 0 1 0 0 0                 0 0 1 0 0                 0 0 0 0.7 0" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Editor shadow -->
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+
+    <!-- Accent gradient -->
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#35E6FF"/>
+      <stop offset="45%" stop-color="#55B7FF"/>
+      <stop offset="75%" stop-color="#8C6BFF"/>
+      <stop offset="100%" stop-color="#FF4FD8"/>
+    </linearGradient>
+
+    <!-- Cube symbol (wireframe-ish, isometric) -->
+    <g id="cube">
+      <!-- top -->
+      <path d="M24 4 L44 16 L24 28 L4 16 Z" fill="#0A3141" fill-opacity="0.35" stroke="#35E6FF" stroke-opacity="0.75" stroke-width="1.6"/>
+      <!-- left -->
+      <path d="M4 16 L24 28 L24 52 L4 40 Z" fill="#062733" fill-opacity="0.45" stroke="#35E6FF" stroke-opacity="0.55" stroke-width="1.6"/>
+      <!-- right -->
+      <path d="M44 16 L24 28 L24 52 L44 40 Z" fill="#07202A" fill-opacity="0.55" stroke="#35E6FF" stroke-opacity="0.45" stroke-width="1.6"/>
+      <!-- inner edges -->
+      <path d="M24 28 V52" stroke="#9FE7FF" stroke-opacity="0.28" stroke-width="1.2"/>
+      <path d="M4 16 L24 28 L44 16" fill="none" stroke="#9FE7FF" stroke-opacity="0.20" stroke-width="1.2"/>
+    </g>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1280" height="320" fill="url(#bg)"/>
+  <rect width="1280" height="320" fill="url(#spot)" opacity="0.9"/>
+  <rect width="1280" height="320" fill="url(#dots)"/>
+  <rect width="1280" height="320" fill="url(#grid)"/>
+
+  <!-- Left cube cluster -->
+  <g transform="translate(68 56)" filter="url(#glow)">
+    <!-- faint connecting lines -->
+    <g opacity="0.30" stroke="#9FE7FF" stroke-width="1">
+      <path d="M76 62 L128 90 L180 62" fill="none"/>
+      <path d="M128 90 L128 152" fill="none"/>
+      <path d="M52 116 L104 144 L156 116" fill="none"/>
+      <path d="M104 144 L104 206" fill="none"/>
+      <path d="M152 144 L152 206" fill="none"/>
+    </g>
+
+    <!-- cubes (arranged like a stacked lattice) -->
+    <g opacity="0.98">
+      <use href="#cube" x="84" y="14"/>
+      <use href="#cube" x="132" y="40"/>
+      <use href="#cube" x="36" y="40"/>
+      <use href="#cube" x="84" y="66"/>
+      <use href="#cube" x="180" y="66"/>
+      <use href="#cube" x="132" y="92"/>
+      <use href="#cube" x="36" y="92"/>
+      <use href="#cube" x="84" y="118"/>
+      <use href="#cube" x="132" y="144"/>
+      <use href="#cube" x="36" y="144"/>
+    </g>
+
+    <!-- glow stroke ring -->
+    <ellipse cx="132" cy="152" rx="190" ry="135" fill="none" stroke="url(#accent)" stroke-opacity="0.15" stroke-width="2"/>
+  </g>
+
+  <!-- Center title -->
+  <g transform="translate(420 106)">
+    <text x="0" y="0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial" font-size="40" font-weight="900" letter-spacing="1.5" fill="#F2FAFF">
+      🏛️ ARCHITECT
+    </text>
+    <text x="0" y="46" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial" font-size="40" font-weight="900" letter-spacing="1.5" fill="#F2FAFF">
+      CODE JOURNAL
+    </text>
+
+    <rect x="0" y="60" width="410" height="6" rx="3" fill="url(#accent)" opacity="0.85"/>
+
+    <text x="0" y="92" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial" font-size="14" font-weight="600" fill="#BFE7F7" opacity="0.95">
+      Python | Databases | APIs | Machine Learning | System Design
+    </text>
+
+    <text x="0" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace" font-size="12" fill="#93CFE6" opacity="0.7">
+      // explaining the “why” and “how” behind expert architectural choices
+    </text>
+
+<text xmlns="http://www.w3.org/2000/svg" x="20" y="162" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace" font-size="17" fill="#93CFE6" opacity="0.7">
+      🤝 Let's connect, Instagram: @_pythonic.dev_
+    </text>
+  </g>
+
+  <!-- Right "code editor" panel -->
+  <g transform="translate(893 39)" filter="url(#shadow)">
+    <rect x="0" y="0" width="376" height="236" rx="14" fill="#0B101A" stroke="#1B2A3A" stroke-width="1.2" opacity="0.98"/>
+
+    <!-- top bar -->
+    <rect x="0" y="0" width="340" height="34" rx="14" fill="#0E1522" opacity="0.98"/>
+    <circle cx="18" cy="18" r="5" fill="#FF5F57" opacity="0.9"/>
+    <circle cx="36" cy="18" r="5" fill="#FEBC2E" opacity="0.9"/>
+    <circle cx="54" cy="18" r="5" fill="#28C840" opacity="0.9"/>
+    <text x="80" y="22" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial" font-size="11" fill="#9FB6C8" opacity="0.85">decision_log.py</text>
+
+    <!-- gutter -->
+    <rect x="0" y="34" width="42" height="202" fill="#0A0F18" opacity="0.9"/>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace" font-size="11" fill="#5D7388" opacity="0.85">
+      <text x="14" y="62">1</text>
+      <text x="14" y="82">2</text>
+      <text x="14" y="102">3</text>
+      <text x="14" y="122">4</text>
+      <text x="14" y="142">5</text>
+      <text x="14" y="162">6</text>
+      <text x="14" y="182">7</text>
+      <text x="14" y="202">8</text>
+    </g>
+
+    <!-- code lines (original, not copied) -->
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace" font-size="11">
+      <text x="56" y="62" fill="#7CFFB2" opacity="0.95">def</text>
+      <text x="80" y="62" fill="#D7E8F4" opacity="0.95">record_decision(</text>
+      <text x="178" y="62" fill="#FF78D7" opacity="0.95">title</text>
+      <text x="210" y="62" fill="#D7E8F4" opacity="0.95">, context):</text>
+
+      <text x="90" y="82" fill="#8CCBFF" opacity="0.95">                             notes</text>
+      <text x="125" y="82" fill="#D7E8F4" opacity="0.95">= {</text>
+      <text x="150" y="82" fill="#FF78D7" opacity="0.95">"why"</text>
+      <text x="190" y="82" fill="#D7E8F4" opacity="0.95">: context,</text>
+
+      
+      
+      
+<text xmlns="http://www.w3.org/2000/svg" x="150" y="102" fill="#FF78D7" opacity="0.95">"how"</text>
+      
+      <text xmlns="http://www.w3.org/2000/svg" x="190" y="102" fill="#D7E8F4" opacity="0.95">:</text>
+<text xmlns="http://www.w3.org/2000/svg" x="200" y="102" fill="#FFD36B" opacity="0.95">["trade-offs","constraints"]</text>
+<text xmlns="http://www.w3.org/2000/svg" x="125" y="110" fill="#D7E8F4" opacity="0.95">}</text>
+
+      <text x="56" y="130" fill="#7CFFB2" opacity="0.95">return</text>
+      <text x="100" y="130" fill="#D7E8F4" opacity="0.95">notes</text>
+
+      <text x="56" y="152" fill="#5D7388" opacity="0.85"># quick snapshot</text>
+    </g>
+
+    <!-- mini chart area -->
+    <g transform="translate(56 160)">
+      <rect x="0" y="0" width="268" height="70" rx="10" fill="#0E1624" stroke="#1B2A3A" opacity="0.95"/>
+      <path d="M16 52 H252" stroke="#2A3C52" stroke-width="1" opacity="0.9"/>
+
+      <!-- bars -->
+      <rect x="26" y="34" width="14" height="18" rx="3" fill="#35E6FF" opacity="0.9"/>
+      <rect x="52" y="26" width="14" height="26" rx="3" fill="#55B7FF" opacity="0.9"/>
+      <rect x="78" y="18" width="14" height="34" rx="3" fill="#8C6BFF" opacity="0.9"/>
+      <rect x="104" y="10" width="14" height="42" rx="3" fill="#FF4FD8" opacity="0.85"/>
+
+      <rect x="150" y="30" width="14" height="22" rx="3" fill="#35E6FF" opacity="0.65"/>
+      <rect x="176" y="22" width="14" height="30" rx="3" fill="#55B7FF" opacity="0.65"/>
+      <rect x="202" y="14" width="14" height="38" rx="3" fill="#8C6BFF" opacity="0.65"/>
+      <rect x="228" y="26" width="14" height="26" rx="3" fill="#FF4FD8" opacity="0.6"/>
+
+      <text x="16" y="65" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial" font-size="10" fill="#9FB6C8" opacity="0.85">Signal: complexity vs. leverage</text>
+    </g>
+  </g>
+
+  <!-- Bottom subtle accent line -->
+  <path d="M40 286 C 260 250, 520 318, 820 282 C 1010 260, 1135 252, 1240 266" fill="none" stroke="url(#accent)" stroke-opacity="0.20" stroke-width="6" stroke-linecap="round"/>
+</svg>
